@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: bfhl-api
+    env: docker
+    region: singapore
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GEMINI_API_KEY
+        value: AIzaSyALGBRzVsHdycRP8biq_XyRFmbLpz2T15Y
+      - key: APP_OFFICIAL_EMAIL
+        value: sahil3920.beai23@chitkara.edu.in
+      - key: PORT
+        value: 8080
+    healthCheckPath: /health
