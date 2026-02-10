@@ -1,0 +1,205 @@
+{
+  "info": {
+    "name": "BFHL API Collection",
+    "description": "REST API for BFHL Challenge - Mathematical Operations and AI",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        },
+        "description": "Check API health status"
+      }
+    },
+    {
+      "name": "Fibonacci",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fibonacci\": 7\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Generate Fibonacci series"
+      }
+    },
+    {
+      "name": "Prime Numbers",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"prime\": [2, 4, 7, 9, 11]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Filter prime numbers from array"
+      }
+    },
+    {
+      "name": "LCM",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"lcm\": [12, 18, 24]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Calculate Least Common Multiple"
+      }
+    },
+    {
+      "name": "HCF",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"hcf\": [24, 36, 60]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Calculate Highest Common Factor"
+      }
+    },
+    {
+      "name": "AI Question",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"AI\": \"What is the capital city of Maharashtra?\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Ask AI a question"
+      }
+    },
+    {
+      "name": "Error - Multiple Keys",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fibonacci\": 5,\n  \"prime\": [2, 3]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Test error handling for multiple keys (should fail)"
+      }
+    },
+    {
+      "name": "Error - No Key",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Test error handling for empty request (should fail)"
+      }
+    },
+    {
+      "name": "Error - Invalid Input",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fibonacci\": -5\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/bfhl",
+          "host": ["{{base_url}}"],
+          "path": ["bfhl"]
+        },
+        "description": "Test error handling for negative fibonacci (should fail)"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+}

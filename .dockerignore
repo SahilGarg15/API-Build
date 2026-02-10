@@ -1,0 +1,25 @@
+# Dependency directories
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE files
+.idea/
+*.iml
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+*.log
+
+# Build outputs
+*.class
+*.jar
+*.war
