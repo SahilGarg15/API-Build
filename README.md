@@ -364,14 +364,38 @@ taskkill /PID <process-id> /F
 
 ## 🔗 Live Demo
 
-After deployment, your API will be accessible at:
-- **Render**: `https://your-app-name.onrender.com`
-- **Railway**: `https://your-app-name.up.railway.app`
+**🚀 Deployed on Railway:** https://bajajproject-production-2620.up.railway.app
 
-Test it:
+### Quick Tests:
+
+**Health Check:**
 ```bash
-curl https://your-app-name.onrender.com/health
+curl https://bajajproject-production-2620.up.railway.app/health
 ```
+
+**Fibonacci:**
+```bash
+curl -X POST https://bajajproject-production-2620.up.railway.app/bfhl \
+  -H "Content-Type: application/json" \
+  -d '{"fibonacci": 7}'
+```
+
+**AI Question:**
+```bash
+curl -X POST https://bajajproject-production-2620.up.railway.app/bfhl \
+  -H "Content-Type: application/json" \
+  -d '{"AI": "What is the capital of India?"}'
+```
+
+### Set Environment Variables in Railway Dashboard:
+
+1. Open Railway dashboard: https://railway.app/project/8120d4eb-c5fd-42a2-bd2a-9bcfafac5cf0
+2. Click on your service
+3. Go to **Variables** tab
+4. Add:
+   - `GEMINI_API_KEY`: `AIzaSyALGBRzVsHdycRP8biq_XyRFmbLpz2T15Y`
+   - `APP_OFFICIAL_EMAIL`: `sahil3920.beai23@chitkara.edu.in`
+5. Railway will automatically redeploy
 
 ## 📄 License
 
